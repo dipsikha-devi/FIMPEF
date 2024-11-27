@@ -1,0 +1,65 @@
+# Flood Inundation Mapping Predictions Evaluation Framework (FIMPEF)
+
+![SDML](https://github.com/user-attachments/assets/a6af2a80-f6e2-46e0-a17b-791303a3a705) This repository presents a user -friendly python package version 0.1.2 along with the source code to evaluate flood inundation maps automatically. This package is developed in Surface Dynamics Modelling Lab (SDML), Department of Geography and Environment, The University of Alabama, United States.
+
+# Background
+
+The accuracy of the flood inundation mapping (FIM) is critical for model development and disaster preparedness. The evaluation of flood maps from different sources using geospatial platforms can be tedious and requires repeated processing and analysis for each map. These preprocessing steps include extracting the correct flood extent, assigning the same projection system to all the maps, categorizing the maps as binary flood maps, removal of permanent water bodies, etc. This manual data processing is cumbersome and prone to human error.
+
+To address these issues, we developed Flood Inundation Mapping Prediction Evaluation Framework (FIMPEF), a Python-based FIM evaluation framework capable of automatically evaluating flood maps from different sources. FIMPEF takes the advantage of comparing multiple target datasets with large benchmark datasets. It includes an option to incorporate permanent waterbodies as non-flood pixels with a user input file or pre-set dataset. In addition to traditional evaluation metrics, it can also compare the number of buildings inundated using a user input file or a pre-set dataset.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7cbe7691-c680-43d5-99bf-6ac788670921" width="500" />
+</p>
+
+
+# Repository Structure
+```bash
+FIMPEF/
+├── Input Rasters/
+│   └── Case 1/ 
+│       └── RG_benchmark.tif  (Benchmark FIM for Hurricane Mathew, Oct 09, 2016, North Carolina. Make sure to enter the name 'benchmark' while naming the raster)
+│       └── OWP_09_NC.tif     (Model FIM for Hurricane Mathew, Oct 09, 2016, North Carolina. (NOAA OWP HAND FIM))
+├── PWB/
+│   └── PWB.shp               (Shapefile of Permanent Water Bodies)
+├── BuildingFootprint/
+│   └── Cliped.gpkg           (Geopackage of building footprints)
+├── FIMPEFfunctions.py         (Contains all functions associated with the notebook)
+├── FIMPEF.ipynb               (The main notebook code to get FIM)
+├── FIMPEF_package.ipynb       (FIMPEF package version 0.1.2)
+└── README.md                 (This file)
+```
+# Usage
+
+For directly using the package, the user can use the following code in a Jupyter notebook:
+
+```bash
+!pip install fimpef==0.1.2
+```
+For using the source code, simply run the FIMPEF.ipynb importing the FIMPEFfunctions.py.
+
+# Outputs
+The output from FIMPEF includes generated files in TIFF, SHP, CSV, and PNG formats, all stored within the "Case 1" folder. Users can visualize the TIFF files using any geospatial platform. The TIFF files consist of the binary Benchmark-FIM (Benchmark.tif), Model-FIM (Candidate.tif), and Agreement-FIM (Contingency.tif). The shp files contain the boundary of the generated flood extent. The png files include the Agreement map, Performance Metrics, and Building Footprint Statistics.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a1cfeb14-45b2-4c77-96d4-7ce3ae82c3e8" width="350" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5e6bdd33-8b4c-4ec7-9bc9-18fcd1e39cdb" width="450" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e0348548-e380-422e-9b97-c0b859ac6ac7" width="500" />
+</p>
+
+### **Acknowledgements**
+| | |
+| --- | --- |
+| ![alt text](https://ciroh.ua.edu/wp-content/uploads/2022/08/CIROHLogo_200x200.png) | Funding for this project was provided by the National Oceanic & Atmospheric Administration (NOAA), awarded to the Cooperative Institute for Research to Operations in Hydrology (CIROH) through the NOAA Cooperative Agreement with The University of Alabama.
+
+### **For More Information**
+Contact <a href="https://geography.ua.edu/people/sagy-cohen/" target="_blank">Dr. Sagy Cohen</a>
+ (sagy.cohen@ua.edu)
+Dr. Dipsikha Devi, (ddevi@ua.edu)
+Supath Dhittal,(sdhital@crimson.ua.edu)

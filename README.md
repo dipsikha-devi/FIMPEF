@@ -57,7 +57,7 @@ The output from FIMPEF includes generated files in TIFF, SHP, CSV, and PNG forma
 
 If you use this repository or its components in your work, please cite it as follows:
 
-Dipsikha Devi, Supath Dhittal, Dinuke Munasinghe, Anupal Baruah, Sagy Cohen. "FIMPEF" GitHub, 2024, .
+Dipsikha Devi, Supath Dhittal, Dinuke Munasinghe, Anupal Baruah, Sagy Cohen. "FIMPEF" GitHub, 2024, .https://github.com/dipsikha-devi/FIMPEF
 ### **Acknowledgements**
 | | |
 | --- | --- |

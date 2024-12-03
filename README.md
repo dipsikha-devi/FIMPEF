@@ -68,6 +68,9 @@ The output from FIMPEF includes generated files in TIFF, SHP, CSV, and PNG forma
   <img src="https://github.com/user-attachments/assets/e0348548-e380-422e-9b97-c0b859ac6ac7" width="500" />
 </p>
 
+## Data
+For data click in the link [Data](https://alabama.box.com/s/3lttzlr209ts2wrp4q9a27qvbc7y649n)
+
 ## Citation
 
 If you use this repository or its components in your work, please cite it as follows:

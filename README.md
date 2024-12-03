@@ -33,7 +33,7 @@ FIMPEF/
 └── README.md                 (This file)
 ```
 # Main Directory Structure
-The main directory contains the main folder. Inside the main folder there are sub folders with individual case studies. For example, if a user has three case studies they should create three seperate folders. Inside each folder there should be a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format.
+The main directory contains the main folder. Inside the main folder there are sub folders with individual case studies. For example, if a user has two case studies they should create two seperate folders. Inside each folder there should be a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format.
 <div align="center">
   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3329baf0-e5d4-4f54-a5a2-278c34b68ac8">
 </div>

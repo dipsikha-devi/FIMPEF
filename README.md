@@ -69,7 +69,7 @@ The output from FIMPEF includes generated files in TIFF, SHP, CSV, and PNG forma
 </p>
 
 ## Data
-For data click in the link [Data](https://alabama.box.com/s/3lttzlr209ts2wrp4q9a27qvbc7y649n)
+For data click in this link [Data](https://alabama.box.com/s/3lttzlr209ts2wrp4q9a27qvbc7y649n).
 
 ## Citation
 

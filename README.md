@@ -1,13 +1,9 @@
 # Flood Inundation Mapping Predictions Evaluation Framework (FIMPEF)
 
-<div align="left">
-  <img src="https://github.com/user-attachments/assets/a6af2a80-f6e2-46e0-a17b-791303a3a705" alt="SDML" width="150" style="margin-right: 15px; float: left;">
-  <p style="display: inline-block; vertical-align: top;">
-    This repository provides a user-friendly Python package (version 0.1.2) and source code for the automatic evaluation of flood inundation maps.  
-    It is developed by the Surface Dynamics Modeling Lab (SDML) in the Department of Geography and Environment at The University of Alabama, United States.
-  </p>
-</div>
-
+| | |
+| --- | --- |
+| <a href="https://sdml.ua.edu"><img src="https://sdml.ua.edu/wp-content/uploads/2023/01/SDML_logo_Sq_grey.png" alt="SDML Logo" width="300"></a> | This repository provides a user-friendly Python package (version 0.1.2) and source code for the automatic evaluation of flood inundation maps. It is developed under Surface Dynamics Modeling Lab (SDML), Department of Geography and Environment at The University of Alabama, United States.
+ 
 
 # Background
 

@@ -21,8 +21,8 @@ To address these issues, we developed Flood Inundation Mapping Prediction Evalua
 FIMPEF/
 ├── Input Rasters/
 │   └── Case 1/ 
-│       └── RG_benchmark.tif  (Benchmark FIM for Hurricane Mathew, Oct 09, 2016, North Carolina. Make sure to enter the name 'benchmark' while naming the raster)
-│       └── OWP_09_NC.tif     (Model FIM for Hurricane Mathew, Oct 09, 2016, North Carolina. (NOAA OWP HAND FIM))
+│       └── RG_benchmark.tif  (Benchmark FIM (B-FIM) for Hurricane Mathew, Oct 09, 2016, North Carolina. Make sure to enter the name 'benchmark' while naming the raster)
+│       └── OWP_09_NC.tif     (Model FIM (M-FIM) for Hurricane Mathew, Oct 09, 2016, North Carolina. (NOAA OWP HAND FIM))
 ├── PWB/
 │   └── PWB.shp               (Shapefile of Permanent Water Bodies.)
 ├── BuildingFootprint/
@@ -33,7 +33,7 @@ FIMPEF/
 └── README.md                 (This file)
 ```
 # Main Directory Structure
-The main directory contains the main folder. Inside the main folder there are sub folders with the case studies. If a user has three case studies then user need to prepare three folders. Inside each folder there should be a B-FIM with a 'benchmark' name assigned in it and different M-FIM in tif format.
+The main directory contains the main folder. Inside the main folder there are sub folders with individual case studies. For example, if a user has three case studies they should create three seperate folders. Inside each folder there should be a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format.
 <div align="center">
   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3329baf0-e5d4-4f54-a5a2-278c34b68ac8">
 </div>

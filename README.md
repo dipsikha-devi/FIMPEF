@@ -12,7 +12,7 @@ The accuracy of the flood inundation mapping (FIM) is critical for model develop
 To address these issues, we developed Flood Inundation Mapping Prediction Evaluation Framework (FIMPEF), a Python-based FIM evaluation framework capable of automatically evaluating flood maps from different sources. FIMPEF takes the advantage of comparing multiple target datasets with large benchmark datasets. It includes an option to incorporate permanent waterbodies as non-flood pixels with a user input file or pre-set dataset. In addition to traditional evaluation metrics, it can also compare the number of buildings inundated using a user input file or a pre-set dataset.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7cbe7691-c680-43d5-99bf-6ac788670921" width="500" />
+  <img src="https://github.com/user-attachments/assets/7cbe7691-c680-43d5-99bf-6ac788670921" width="450" />
 </p>
 
 

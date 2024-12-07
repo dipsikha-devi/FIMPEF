@@ -24,13 +24,13 @@ FIMPEF/
 │       └── RG_benchmark.tif  (Benchmark FIM (B-FIM) for Hurricane Mathew, Oct 09, 2016, North Carolina. Make sure to enter the name 'benchmark' while naming the raster)
 │       └── OWP_09_NC.tif     (Model FIM (M-FIM) for Hurricane Mathew, Oct 09, 2016, North Carolina. (NOAA OWP HAND FIM))
 ├── PWB/
-│   └── PWB.shp               (Shapefile of Permanent Water Bodies.)
+│   └── PWB.shp               (Shapefile of Permanent Water Bodies)
 ├── BuildingFootprint/
 │   └── NC_bldg.shp            (Geopackage of building footprints.The building footprint used is Microsoft release under Open Data Commons Open Database Liocence. Here is the link https://automaticknowledge.co.uk/us-building-footprints/ User can download the building footprints of the desired states from this link.)
 ├── FIMPEFfunctions.py         (Contains all functions associated with the notebook)
 ├── FIMPEF.ipynb               (The main notebook code to get FIM)
 ├── FIMPEF_package.ipynb       (FIMPEF package version 0.1.2)
-└── README.md                 (This file)
+└── README.md                  (This file)
 ```
 # Main Directory Structure
 The main directory contains the main folder. Inside the main folder there are sub folders with individual case studies. For example, if a user has two case studies they should create two seperate folders. Inside each folder there should be a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format.

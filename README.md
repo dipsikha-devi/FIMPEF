@@ -15,6 +15,20 @@ To address these issues, we developed Flood Inundation Mapping Prediction Evalua
   <img src="https://github.com/user-attachments/assets/7cbe7691-c680-43d5-99bf-6ac788670921" width="450" />
 </p>
 
+# Usage
+
+For directly using the package, the user can use the following code in a Jupyter notebook:
+
+```bash
+!pip install fimpef
+```
+The users should import the package to the jupyter notebook or any python IDE.
+
+```bash
+#Import the package
+import fimpef as fp
+from pathlib import Path
+```
 
 # Repository Structure
 ```bash
@@ -33,41 +47,81 @@ FIMPEF/
 └── README.md                  (This file)
 ```
 # Main Directory Structure
-The main directory contains the main folder. Inside the main folder there are sub folders with individual case studies. For example, if a user has two case studies they should create two seperate folders. Inside each folder there should be a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format.
+The main directory contains the primary folder for storing the  case studies. If there is one case study, user can directly pass the case study folder as the main directory. Each case study folder must include a B-FIM  with a 'benchmark' name assigned in it and different M-FIM in tif format. 
+For mutilple case studies,the main directory should contain the seperate folders for individual case studies.For example, if a user has two case studies they should create two seperate folders as shown in the Figure below.
 <div align="center">
   <img width="300" alt="image" src="https://github.com/user-attachments/assets/3329baf0-e5d4-4f54-a5a2-278c34b68ac8">
 </div>
 
+```bash
+Main_dir = Path('./Main_dir')
+```
+
 ## Permanent Water Bodies
-In this work the 'USA Detailed Water Bodies' from ARCGIS hub is used. Here is the link https://hub.arcgis.com/datasets/esri::usa-detailed-water-bodies/about. User can input their own permanent water bodies shapefile as .shp and .gpkg format.
+In this work the 'USA Detailed Water Bodies' from ARCGIS hub is used. Here is the link https://hub.arcgis.com/datasets/esri::usa-detailed-water-bodies/about. User can input their own permanent water bodies shapefile as .shp and .gpkg format. User need to assign the shapefile of the permanent water bodies as -
+```bash
+PWD_dir = Path('./ESRI_PWB/USA_Detailed_Water_Bodies.shp')
+```
+## Methods for Extracting Flood Extents
+Smallest raster: The framework will first check all the raster extents (benchmark and FIMs). It will then determine the smallest among all the rasters. A shape file will then be created to mask all the rasters.
 
-## Building Footprints
-The building footprint used is Microsoft release under Open Data Commons Open Database Licence. Here is the link https://automaticknowledge.co.uk/us-building-footprints/ User can download the building footprints of the desired states from this link.
+Convex Hull : Another provision of determining flood extent is the generation of the minimum bounding polygon along the valid shapes. The framework will select the smallest raster extent followed by the generation of the valid vector shapes from the raster. It will then generate the convex hull (minimum bounding polygon along the valid shapes).
 
-# Usage
+User-Defined vector flood extent : User can give input an already pre-defined flood extent vector file.
 
-For directly using the package, the user can use the following code in a Jupyter notebook:
+User can enter the following methods
+
+1. 'smallest_extent'
+2. 'convex_hull'
+3. 'AOI' -User defined boundary
+   
+```bash
+method_name = "smallest_extent"
+```
+For the method 'AOI', user need to pass the shapefile of the AOI.
 
 ```bash
-!pip install fimpef==0.1.2
+AOI  = Path('./AOI.shp')
 ```
-For using the source code, simply run the FIMPEF.ipynb importing the FIMPEFfunctions.py.
+## Executing the Evaluation Module
+User can directly run the evaluation module of FIMPEF by calling the function EvaluateFIM.
 
-# Outputs
-The output from FIMPEF includes generated files in TIFF, SHP, CSV, and PNG formats, all stored within the "Case 1" folder. Users can visualize the TIFF files using any geospatial platform. The TIFF files consist of the binary Benchmark-FIM (Benchmark.tif), Model-FIM (Candidate.tif), and Agreement-FIM (Contingency.tif). The shp files contain the boundary of the generated flood extent. The png files include the Agreement map, Performance Metrics, and Building Footprint Statistics.
+```bash
+fp.EvaluateFIM(Main_dir, PWD_dir, method_name)
+```
+The outputs from the function EvaluateFIM includes generated files in TIFF, SHP, CSV, and PNG formats, all stored within the output folder. Users can visualize the TIFF files using any geospatial platform. The TIFF files consist of the binary Benchmark-FIM (Benchmark.tif), Model-FIM (Candidate.tif), and Agreement-FIM (Contingency.tif). The shp files contain the boundary of the generated flood extent. For better understanding,users can print the agreement maps and the evaluation scores as png using the functions PrintContingencyMap and PlotEvaluationMetrics.
 
+```bash
+fp.PrintContingencyMap(Main_dir, method_name)
+```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a1cfeb14-45b2-4c77-96d4-7ce3ae82c3e8" width="350" />
 </p>
 
+```bash
+fp.PlotEvaluationMetrics(Main_dir, method_name)
+```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5e6bdd33-8b4c-4ec7-9bc9-18fcd1e39cdb" width="450" />
-</p>
+</p> 
 
+## Evaluation of Building Footprints
+The building footprint used is Microsoft release under Open Data Commons Open Database Licence. Here is the link https://automaticknowledge.co.uk/us-building-footprints/ User can download the building footprints of the desired states from this link. If the user already have a building footprint shapefile, user can pass the building footprint as .shp or .gpkg. For building footprint evaluation with B-FIM, users can use the function EvaluationWithBuildingFootprint.
+
+```bash
+building_footprint = Path('./BuildingFootprint.gpkg/.shp')
+fp.EvaluationWithBuildingFootprint(Main_dir, method_name, building_footprint= building_footprint)
+```
+Another flexibility of FIMPEF that it already has the msfootprint package that will allow the users to automatically evaluate the buildings without passing the building shapefile. To utilize this functionality, the users should have a valid Google Earth Engine account.The user need to specify the country name before executing this function. For more detail of this package user can go through the following link ().
+
+```bash
+country = 'US'
+fp.EvaluationWithBuildingFootprint(Main_dir, method_name, country= country)
+```
+The outputs of the building footprint analysis generated in .CSV format and .png format and stored in the output folder.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e0348548-e380-422e-9b97-c0b859ac6ac7" width="500" />
 </p>
-
 
 ## Citation
 
@@ -80,7 +134,7 @@ Dipsikha Devi, Supath Dhital, Dinuke Munasinghe, Anupal Baruah, Sagy Cohen. "FIM
 | ![alt text](https://ciroh.ua.edu/wp-content/uploads/2022/08/CIROHLogo_200x200.png) | Funding for this project was provided by the National Oceanic & Atmospheric Administration (NOAA), awarded to the Cooperative Institute for Research to Operations in Hydrology (CIROH) through the NOAA Cooperative Agreement with The University of Alabama.
 
 ### **For More Information**
-Contact <a href="https://geography.ua.edu/people/sagy-cohen/" target="_blank">Dr. Sagy Cohen</a>
+Contact <a href="https://geography.ua.edu/people/sagy-cohen/" target="_blank">Sagy Cohen</a>
  (sagy.cohen@ua.edu)
-Dr. Dipsikha Devi, (ddevi@ua.edu)
+ Dipsikha Devi, (ddevi@ua.edu)
 Supath Dhittal,(sdhital@crimson.ua.edu)

@@ -128,6 +128,17 @@ The outputs of the building footprint analysis generated in .CSV format and .png
 If you use this repository or its components in your work, please cite it as follows:
 
 Dipsikha Devi, Supath Dhital, Dinuke Munasinghe, Anupal Baruah, Sagy Cohen. "FIMPEF" GitHub, 2024, .https://github.com/dipsikha-devi/FIMPEF
+
+```bibtex
+@software{FIMPEF2024,
+  author       = {Dipsikha Devi and Supath Dhital and Dinuke Munasinghe and Anupal Baruah and Sagy Cohen},
+  title        = {FIMPEF},
+  year         = {2024},
+  publisher    = {GitHub},
+  url          = {https://github.com/dipsikha-devi/FIMPEF},
+}
+```
+
 ### **Acknowledgements**
 | | |
 | --- | --- |
